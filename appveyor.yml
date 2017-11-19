@@ -23,6 +23,7 @@ test_script:
   - node --version
   - npm --version
   - yarn --version
+  - yarn test
 
 cache:
  - node_modules
