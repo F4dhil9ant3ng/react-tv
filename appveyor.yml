@@ -11,11 +11,11 @@ matrix:
 platform:
   - x64
 
+clone_depth: 5
+
 install:
   - ps: Install-Product node $env:nodejs_version $env:platform
   - yarn install
-
-build: off
 
 test_script:
   - node --version
