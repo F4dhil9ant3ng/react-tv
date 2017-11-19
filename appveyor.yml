@@ -1,0 +1,31 @@
+image: Visual Studio 2017
+
+environment:
+  matrix:
+    - nodejs_version: ""
+    - nodejs_version: "7"
+    - nodejs_version: "6"
+
+matrix:
+  fast_finish: true
+
+platform:
+  - x64
+
+install:
+  - ps: Install-Product node $env:nodejs_version $env:platform
+  - yarn install
+
+build: off
+
+shallow_clone: true
+
+test_script:
+  - node --version
+  - npm --version
+  - yarn --version
+  - yarn test:ci
+
+cache:
+ - node_modules
+ - "%LOCALAPPDATA%/Yarn"
