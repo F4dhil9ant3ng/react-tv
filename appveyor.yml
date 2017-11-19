@@ -17,8 +17,6 @@ install:
 
 build: off
 
-shallow_clone: true
-
 test_script:
   - node --version
   - npm --version
